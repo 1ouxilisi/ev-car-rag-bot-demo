@@ -32,6 +32,13 @@
   .tag.ok { color: var(--green); background: #f0fdf4; }
   .tag.block { color: var(--orange); background: #fff7ed; }
   .tag.muted { color: var(--gray); }
+  .tools { margin-top: 8px; border-top: 1px dashed var(--line); padding-top: 8px; }
+  .tools-head { font-size: 12px; color: var(--blue); margin-bottom: 4px; }
+  .tool-row { font-size: 12px; color: var(--gray); margin-top: 6px; line-height: 1.5; }
+  .tool-name { color: var(--blue); margin-right: 6px; }
+  .tool-args { color: var(--sub); }
+  .tool-result { margin-top: 2px; color: var(--ink); }
+  button.ghost { background: var(--bg); color: var(--gray); }
   .input-bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--card);
                border-top: 1px solid var(--line); padding: 12px 16px; }
   .input-inner { max-width: 760px; margin: 0 auto; display: flex; gap: 10px; }
@@ -44,9 +51,10 @@
 <body>
 <div class="wrap">
   <h1>新能源汽车问答助手</h1>
-  <div class="meta">RAG 检索增强 · LoRA 微调 Qwen3-4B · 实体校验 + 意图识别 + 阈值兜底（静态演示）</div>
+  <div class="meta">RAG 检索增强 · LoRA 微调 Qwen3-4B · 实体校验 + 意图识别 + 阈值兜底 · 工具调用 / 多轮记忆演示（静态原型）</div>
   <div class="notice">
     本页为<b>纯前端演示原型</b>：分流与检索逻辑在浏览器内运行，答案取自仓库归档评测结果，不调用在线大模型；
+    工具调用轨迹与多轮记忆为前端预置展示，对应后端骨架待在线兼容端点验证。
     完整 LoRA 微调 + vLLM 部署 + 神经向量 RAG 后端见<a href="https://gitee.com/beyond-invincibility/ev-car-rag-bot" target="_blank" rel="noopener">源码仓库</a>。车型与参数均为虚构演示语料，不对应真实品牌。
   </div>
   <div class="chips" id="chips">
@@ -62,6 +70,7 @@
 <div class="input-bar">
   <div class="input-inner">
     <input id="q" placeholder="例如：7kW 充电桩给 60kWh 电池充满要多久？" autocomplete="off">
+    <button id="reset" class="ghost">清空对话</button>
     <button id="send">发送</button>
   </div>
 </div>

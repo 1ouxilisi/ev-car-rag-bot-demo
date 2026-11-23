@@ -23,7 +23,10 @@ window.DEMO_DATA = {
       "question": "星驰 A5 长续航版的电池和 CLTC 续航是多少？",
       "answer": "星驰 A5 长续航版搭载 60kWh 电池，CLTC 综合续航约 550 公里。",
       "keywords": ["a5", "60kwh", "550", "续航", "电池", "长续航"],
-      "refs": ["星驰 A5 长续航版 60kWh，CLTC 约 550 公里；标准续航版 50kWh，约 430 公里。"]
+      "refs": ["星驰 A5 长续航版 60kWh，CLTC 约 550 公里；标准续航版 50kWh，约 430 公里。"],
+      "tools": [
+        { "name": "lookup_vehicle_spec", "args": { "model": "星驰 A5" }, "result": "命中知识库：A5 长续航 60kWh / CLTC 约 550 公里。" }
+      ]
     },
     {
       "id": 2,
@@ -31,7 +34,10 @@ window.DEMO_DATA = {
       "question": "家用 7kW 充电桩给 60kWh 电池充满要多久？",
       "answer": "根据资料，使用 7kW 家用交流充电桩时，60kWh 电池从空到满约 9 到 10 小时，适合夜间慢充。",
       "keywords": ["7kw", "60kwh", "充电", "小时", "慢充", "家用", "桩"],
-      "refs": ["7kW 家用交流充电桩，60kWh 电池从空到满约 9 到 10 小时，适合夜间慢充。"]
+      "refs": ["7kW 家用交流充电桩，60kWh 电池从空到满约 9 到 10 小时，适合夜间慢充。"],
+      "tools": [
+        { "name": "estimate_charge_time", "args": { "battery_kwh": 60, "charger_kw": 7 }, "result": "60kWh / 7kW / 效率 0.9 ≈ 9.5 小时充满。" }
+      ]
     },
     {
       "id": 3,
@@ -87,7 +93,10 @@ window.DEMO_DATA = {
       "question": "星驰 B7 的电池和 CLTC 续航是多少？",
       "answer": "星驰 B7 长续航版搭载 75kWh 电池，CLTC 综合续航约 620 公里。具体配置与参数以官方配置表为准。",
       "keywords": ["b7", "75kwh", "620", "续航", "电池", "suv"],
-      "refs": ["星驰 B7 长续航版 75kWh，CLTC 约 620 公里；B7 Pro 双电机四驱约 590 公里。"]
+      "refs": ["星驰 B7 长续航版 75kWh，CLTC 约 620 公里；B7 Pro 双电机四驱约 590 公里。"],
+      "tools": [
+        { "name": "lookup_vehicle_spec", "args": { "model": "星驰 B7" }, "result": "命中知识库：B7 长续航 75kWh / CLTC 约 620 公里。" }
+      ]
     },
     {
       "id": 10,
@@ -95,7 +104,10 @@ window.DEMO_DATA = {
       "question": "云澜 C3 的直流快充速度怎么样？",
       "answer": "云澜 C3 的直流快充峰值功率约 90kW，30% 到 80% 快充约 35 分钟。具体充电速度以现场条件为准。",
       "keywords": ["c3", "90kw", "35 分钟", "快充", "云澜", "直流"],
-      "refs": ["云澜 C3 峰值快充约 90kW，30%–80% 约 35 分钟。"]
+      "refs": ["云澜 C3 峰值快充约 90kW，30%–80% 约 35 分钟。"],
+      "tools": [
+        { "name": "lookup_vehicle_spec", "args": { "model": "云澜 C3" }, "result": "命中知识库：C3 峰值快充约 90kW，30%–80% 约 35 分钟。" }
+      ]
     },
     {
       "id": 11,
@@ -135,7 +147,10 @@ window.DEMO_DATA = {
       "question": "云澜 C3 百公里电耗大概多少度？",
       "answer": "根据资料，云澜 C3 百公里综合电耗约 13.1 度电；实际电耗受气温、车速、空调和载重影响，以官方最新参数为准。",
       "keywords": ["c3", "云澜", "电耗", "13.1", "度", "百公里"],
-      "refs": ["云澜 C3 百公里综合电耗约 13.1 度电。"]
+      "refs": ["云澜 C3 百公里综合电耗约 13.1 度电。"],
+      "tools": [
+        { "name": "lookup_vehicle_spec", "args": { "model": "云澜 C3" }, "result": "命中知识库：C3 百公里综合电耗约 13.1 度。" }
+      ]
     },
     {
       "id": 16,
